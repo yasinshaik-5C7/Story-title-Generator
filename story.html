@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #022f4a;
+            margin: 0;
+        }
+        .container {
+            background-color: #e7f704;
+            margin-top: 20px;
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            height: 500px;
+            width: 1000px;
+        }
+        h1 {
+            color:rgb(2, 2, 2);
+        }
+        #story {
+            font-size: 3vh;
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            background-color:orange;
+            min-height: 100px;
+        }
+        button {
+            margin-top: 50px;
+            padding: 10px 20px;
+            font-size: 30px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff0000;
+            transform: scale(1.1);
+            border-radius:10px ;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1> Story title Generator</h1>
+        <div id="story">Click the button to generate a story!</div>
+        <button onclick="generateStory()">Generate Story</button>
+    </div>
+
+    <script>
+        const stories = [
+            "Once upon a time, in a small village, a young girl discovered a hidden treasure beneath an old oak tree.",
+            "In a futuristic city, a robot developed emotions and began a quest to understand humanity.",
+            "During a fierce storm, a sailor found an enchanted island that appeared only once every hundred years.",
+            "A curious cat sneaked into a mysterious library and found books that could speak.",
+            "An astronaut stranded on Mars used ingenuity and determination to survive against all odds.",
+            "The Silent Witness.",
+            "A Love Written in the Stars: Two Souls Bound Across Time and Distance.",
+            "The Letters She Never Sent: A Tale of Longing, Regret, and Second Chances.",
+            "Echoes of a Broken Past: The Struggle to Rebuild Life After Tragedy.",
+            "The Silent Storm: How One Family’s Secrets Shaped Generations.",
+        ];
+
+        function generateStory() {
+            const randomIndex = Math.floor(Math.random() * stories.length);
+            document.getElementById('story').innerText = stories[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
